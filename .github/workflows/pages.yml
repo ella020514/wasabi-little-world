@@ -1,0 +1,77 @@
+name: Publish Wasabi website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: wasabi-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy the published website once
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f site/index.html ]; then
+            mkdir -p site
+            while IFS= read -r file; do
+              mkdir -p "site/$(dirname "$file")"
+              curl --fail --location --retry 3 --max-time 120 "https://sparkling-bird-a665.1264761571.workers.dev/$file" -o "site/$file"
+            done <<'FILES'
+            index.html
+            assets/index-CTHGu-Zc.css
+            assets/index-DVJOPEAV.js
+            photos/4.jpeg
+            photos/7.jpeg
+            photos/8.jpeg
+            photos/balcony.png
+            photos/cuddle.png
+            photos/mascot.png
+            photos/new0.png
+            photos/new1.png
+            photos/new2.png
+            photos/new3.png
+            photos/new4.png
+            photos/new5.png
+            photos/new6.png
+            photos/new7.png
+            photos/new8.png
+            photos/ribbons.png
+            photos/smile.png
+            photos/tongue.png
+            photos/window.png
+            FILES
+            grep -q '<div id="root">' site/index.html
+            test -s site/assets/index-DVJOPEAV.js
+            python3 - <<'PY'
+          from pathlib import Path
+          for p in Path('site').rglob('*'):
+              if p.suffix in ('.html', '.js', '.css'):
+                  s = p.read_text()
+                  s = s.replace('/assets/', '/wasabi-little-world/assets/').replace('/photos/', '/wasabi-little-world/photos/')
+                  p.write_text(s)
+          Path('site/.nojekyll').touch()
+          PY
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add site
+            git commit -m "Import Wasabi website and photos"
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
