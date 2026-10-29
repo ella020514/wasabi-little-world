@@ -28,29 +28,29 @@ jobs:
               mkdir -p "site/$(dirname "$file")"
               curl --fail --location --retry 3 --max-time 120 "https://sparkling-bird-a665.1264761571.workers.dev/$file" -o "site/$file"
             done <<'FILES'
-            index.html
-            assets/index-CTHGu-Zc.css
-            assets/index-DVJOPEAV.js
-            photos/4.jpeg
-            photos/7.jpeg
-            photos/8.jpeg
-            photos/balcony.png
-            photos/cuddle.png
-            photos/mascot.png
-            photos/new0.png
-            photos/new1.png
-            photos/new2.png
-            photos/new3.png
-            photos/new4.png
-            photos/new5.png
-            photos/new6.png
-            photos/new7.png
-            photos/new8.png
-            photos/ribbons.png
-            photos/smile.png
-            photos/tongue.png
-            photos/window.png
-            FILES
+          index.html
+          assets/index-CTHGu-Zc.css
+          assets/index-DVJOPEAV.js
+          photos/4.jpeg
+          photos/7.jpeg
+          photos/8.jpeg
+          photos/balcony.png
+          photos/cuddle.png
+          photos/mascot.png
+          photos/new0.png
+          photos/new1.png
+          photos/new2.png
+          photos/new3.png
+          photos/new4.png
+          photos/new5.png
+          photos/new6.png
+          photos/new7.png
+          photos/new8.png
+          photos/ribbons.png
+          photos/smile.png
+          photos/tongue.png
+          photos/window.png
+          FILES
             grep -q '<div id="root">' site/index.html
             test -s site/assets/index-DVJOPEAV.js
             python3 - <<'PY'
