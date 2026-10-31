@@ -1,3 +1,254 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><meta name="theme-color" content="#f8f5ed"/><title>Wasabi’s Little World</title>  <script type="module" crossorigin src="/wasabi-little-world/assets/index-DVJOPEAV.js"></script>
-  <link rel="stylesheet" crossorigin href="/wasabi-little-world/assets/index-CTHGu-Zc.css">
-</head><body><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light only">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wasabi｜一只边牧女孩</title>
+<style>
+:root{color-scheme:light;--bg:#fff;--ink:#000;--dot:rgba(0,0,0,.15);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{position:relative;overflow-x:hidden;margin:0;color:var(--ink);background:radial-gradient(var(--dot) 1.3px,transparent 1.7px) 0 0/16px 16px var(--bg);font:16px/1.65 "Marker Felt","Chalkboard SE","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;font-weight:600}
+img{display:block;max-width:100%}
+svg.i{width:1.1em;height:1.1em;vertical-align:-.15em;margin-right:6px}
+#deco{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.d{position:absolute;color:var(--ink)}
+.wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:34px 0}
+.card{border:4px solid var(--ink);border-radius:18px;background:var(--bg);box-shadow:6px 6px 0 var(--ink)}
+h2{display:inline-block;margin:0 0 26px;padding:4px 20px;font-size:1.5rem;font-weight:900;background:var(--ink);color:var(--bg);border-radius:14px;transform:rotate(-2deg)}
+.hero{display:grid;gap:34px;padding:44px 0 20px;align-items:center}
+@media(min-width:820px){.hero{grid-template-columns:1.15fr .85fr}}
+.name{font-size:clamp(3.6rem,15vw,8.2rem);line-height:1;font-weight:900;letter-spacing:-.03em;margin:14px 0 0;color:var(--bg);-webkit-text-stroke:4px var(--ink);paint-order:stroke fill;text-shadow:7px 7px 0 var(--ink)}
+.tag{font-size:1.2rem;margin:26px 0 0;max-width:20em}
+.sub{margin:6px 0 0;font-weight:700}
+.bub{position:relative;display:inline-block;padding:6px 20px;border:4px solid var(--ink);border-radius:30px;background:var(--bg);font-size:1.5rem;font-weight:900;margin-left:158px}
+.bub:after{content:"";position:absolute;left:-26px;bottom:6px;border:10px solid transparent;border-right:20px solid var(--ink)}
+.dog{position:absolute;width:150px;height:150px;margin-top:-54px;color:var(--ink)}
+@media(prefers-reduced-motion:no-preference){.dog{animation:wig .6s ease-in-out 3}@keyframes wig{50%{transform:rotate(8deg)}}}
+.top{position:relative;height:96px}
+.photo{position:relative;padding:10px;transform:rotate(2deg)}
+.photo img{border:3px solid var(--ink);border-radius:10px;aspect-ratio:4/5;object-fit:cover;object-position:50% 72%;width:100%}
+.photo:before{content:"";position:absolute;top:-16px;left:50%;width:96px;height:28px;margin-left:-48px;border:3px solid var(--ink);background:var(--bg);transform:rotate(-5deg)}
+.facts{display:flex;flex-wrap:wrap;gap:16px;margin:0}
+.facts div{padding:8px 20px;border:4px solid var(--ink);border-radius:16px;background:var(--bg);box-shadow:5px 5px 0 var(--ink)}
+.facts div:nth-child(odd){transform:rotate(-2deg)}.facts div:nth-child(even){transform:rotate(2deg)}
+.facts dt{font-size:.85rem}.facts dd{margin:0;font-size:1.2rem;font-weight:900}
+.count{margin-top:30px;padding:16px 24px;display:flex;flex-wrap:wrap;gap:6px 30px;font-weight:800}
+.count b{font-size:1.5rem}
+.traits{display:grid;gap:20px;max-width:640px;padding:22px}
+.row{display:flex;justify-content:space-between;gap:12px;font-weight:900}
+.row small{font-weight:600}
+.bar{height:24px;border:3px solid var(--ink);border-radius:14px;margin-top:6px;overflow:hidden;background:var(--bg)}
+.bar i{display:block;height:100%;border-right:3px solid var(--ink);background:repeating-linear-gradient(45deg,var(--ink) 0 7px,var(--bg) 7px 13px)}
+.grow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px}
+.grow figure{margin:0;padding:8px 8px 0}
+.grow figure:nth-child(odd){transform:rotate(-2deg)}.grow figure:nth-child(even){transform:rotate(2deg)}
+.grow img{width:100%;aspect-ratio:3/4;object-fit:cover;border:3px solid var(--ink);border-radius:10px}
+.grow figcaption{padding:8px 4px;font-weight:900}
+.grow small{display:block;font-weight:600}
+.gal{columns:2 150px;column-gap:18px}
+@media(min-width:820px){.gal{columns:3}}
+.gal figure{margin:0 0 20px;break-inside:avoid;padding:6px;box-shadow:5px 5px 0 var(--ink)}
+.gal figure:nth-child(3n+1){transform:rotate(-1.2deg)}.gal figure:nth-child(3n+2){transform:rotate(1deg)}
+.gal button{display:block;width:100%;padding:0;border:3px solid var(--ink);border-radius:10px;overflow:hidden;background:none;cursor:zoom-in}
+.gal button:focus-visible{outline:4px dashed var(--ink);outline-offset:3px}
+.gal img{width:100%;height:auto}
+.gal figcaption{text-align:center;font-size:.9rem;font-weight:800;padding:6px 2px 2px}
+dialog{border:4px solid var(--ink);border-radius:18px;padding:12px;background:var(--bg);color:var(--ink);max-width:94vw;max-height:94vh}
+dialog::backdrop{background:rgba(0,0,0,.8)}
+dialog img{max-height:76vh;margin:0 auto;border-radius:10px}
+dialog form{text-align:center;margin:10px 0 0}
+dialog button{font:inherit;font-weight:900;padding:4px 22px;border:3px solid var(--ink);border-radius:20px;background:var(--ink);color:var(--bg);cursor:pointer}
+footer{padding:30px 0 56px;text-align:center;font-weight:900}
+footer svg{width:80px;height:80px;display:block;margin:0 auto 6px}
+
+.dogbtn{background:none;border:0;padding:0;cursor:pointer}
+.stage{position:relative;overflow:hidden;border-radius:10px;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.photo .stage img{border:0;border-radius:0}
+.hint{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);padding:4px 14px;border:3px solid var(--ink);border-radius:20px;background:#fff;color:#000;font-weight:900;pointer-events:none;white-space:nowrap}
+.stk{position:absolute;pointer-events:none;color:#000;transform:rotate(var(--r));filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);animation:pp .35s cubic-bezier(.3,1.6,.5,1) both}
+.stk.t{padding:2px 12px;border:3px solid #000;border-radius:18px;background:#fff;font-weight:900;font-size:1.1rem;white-space:nowrap;filter:none;transform:translate(-50%,-50%) rotate(var(--r))}
+.stk.fl{animation:fl .9s ease-out forwards}
+@keyframes pp{from{transform:scale(0) rotate(-40deg)}}
+@keyframes fl{to{transform:translateY(-90px) scale(1.3);opacity:0}}
+.pill{font:inherit;font-weight:900;padding:4px 18px;border:3px solid var(--ink);border-radius:20px;background:var(--bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink);cursor:pointer;touch-action:manipulation}
+.pill:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+#clr{margin:18px 0 0 6px}
+#snd{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:5}
+.hd{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}.hd .pill{margin-top:6px}
+.lb{display:flex;align-items:center;gap:8px}.lb figure{margin:0;text-align:center;min-width:0}
+.lb img{max-width:100%}#cap{margin-top:6px;font-weight:800}
+.nav{flex:none;width:44px;height:44px;padding:0;border-radius:50%;font-size:1.6rem;line-height:1}
+.lbbar{display:flex;gap:12px;justify-content:center;align-items:center;margin-top:12px;flex-wrap:wrap;font-weight:800}
+.feed{padding:30px 22px 24px;display:grid;gap:20px;justify-items:center;text-align:center}
+.mouth{position:relative;width:200px;height:200px;margin-top:30px}
+.bigdog{width:200px;height:200px;padding:0;border:0;background:none;cursor:pointer;color:var(--ink)}
+.bigdog svg{width:100%;height:100%}
+.bigdog.eat{animation:eat .35s}@keyframes eat{40%{transform:scale(1.12,.9)}}
+#say{position:absolute;left:50%;top:-36px;transform:translateX(-50%);padding:3px 14px;border:3px solid var(--ink);border-radius:20px;background:var(--bg);font-weight:900;white-space:nowrap}
+.fly{position:absolute;left:50%;top:-20px;width:48px;height:48px;margin-left:-24px;color:var(--ink);pointer-events:none;animation:fly .45s ease-in forwards}
+@keyframes fly{to{top:110px;transform:scale(.4)}}
+.meter{width:100%;max-width:420px;text-align:left}
+.foods{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.food{display:grid;justify-items:center;gap:4px;width:92px;padding:10px 6px;border:4px solid var(--ink);border-radius:16px;background:var(--bg);color:var(--ink);box-shadow:4px 4px 0 var(--ink);font:inherit;font-weight:900;cursor:pointer;touch-action:manipulation}
+.food svg{width:46px;height:46px}.food:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+</style>
+<style>.bgm-controls{position:fixed;bottom:max(14px,env(safe-area-inset-bottom));right:14px;z-index:30;max-width:calc(100vw - 28px);display:flex;align-items:center;gap:8px;background:white;border:3px solid black;border-radius:22px;padding:7px 12px;box-shadow:3px 3px black;font:700 12px/1.5 sans-serif}.bgm-controls button{border:0;background:none;font:inherit;cursor:pointer;padding:5px}.bgm-controls input{width:65px;accent-color:black}#wasabi-quiz{max-width:640px;margin:30px auto 90px;padding:0 22px}#wasabi-quiz h2{font-size:1.35rem}.quiz-card{padding:24px}.quiz-top{display:flex;justify-content:space-between;gap:10px;font-size:13px}.quiz-progress{height:10px;border:2px solid black;border-radius:9px;margin:15px 0 23px;overflow:hidden}.quiz-progress i{height:100%;display:block;background:black;transition:width .25s}.quiz-options{display:grid;gap:12px;margin:20px 0}.quiz-option{width:100%;text-align:left;padding:13px 15px;border:3px solid black;border-radius:13px;background:white;color:black;font:inherit;cursor:pointer}.quiz-option[aria-pressed=true]{background:black;color:white;box-shadow:4px 4px #aaa}.quiz-option:focus-visible,#wasabi-quiz button:focus-visible,.bgm-controls button:focus-visible{outline:3px dashed #777;outline-offset:4px}.quiz-nav{display:flex;justify-content:space-between;gap:12px}.quiz-nav button{font:inherit;border:3px solid black;border-radius:20px;padding:9px 19px;background:black;color:white;cursor:pointer}.quiz-nav button:disabled{opacity:.35;cursor:default}.quiz-score{font-size:45px;font-weight:900;margin:12px 0}.quiz-review{border-top:2px dashed black;padding:15px 0;font-size:14px}.quiz-review p{margin:5px 0}.quiz-hint{font-size:12px;font-weight:500}.bgm-controls small{max-width:110px} @media(max-width:380px){.quiz-card{padding:18px}.bgm-controls{font-size:11px}} </style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="paw" viewBox="0 0 40 40" fill="currentColor"><ellipse cx="20" cy="27" rx="11" ry="9"/><circle cx="7" cy="16" r="5"/><circle cx="15" cy="8" r="5"/><circle cx="26" cy="8" r="5"/><circle cx="34" cy="16" r="5"/></symbol>
+<symbol id="bone" viewBox="0 0 60 30" fill="currentColor"><rect x="12" y="9" width="36" height="12"/><circle cx="10" cy="8" r="7"/><circle cx="10" cy="22" r="7"/><circle cx="50" cy="8" r="7"/><circle cx="50" cy="22" r="7"/></symbol>
+<symbol id="spark" viewBox="0 0 40 40" fill="currentColor"><polygon points="20,0 24,16 40,20 24,24 20,40 16,24 0,20 16,16"/></symbol>
+<symbol id="star" viewBox="0 0 40 40" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" style="fill:var(--bg)"><polygon points="20,4 25,15 37,16 28,24 31,36 20,30 9,36 12,24 3,16 15,15"/></symbol>
+<symbol id="heart" viewBox="0 0 40 40" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" style="fill:var(--bg)"><path d="M20 35C6 25 3 15 9 9c5-4 10-2 11 3 1-5 6-7 11-3 6 6 3 16-11 26z"/></symbol>
+<symbol id="ball" viewBox="0 0 40 40" stroke="currentColor" stroke-width="3.5" fill="none"><circle cx="20" cy="20" r="16" style="fill:var(--bg)"/><path d="M6 14Q20 22 34 14M6 26Q20 18 34 26"/></symbol>
+<symbol id="cookie" viewBox="0 0 40 40" stroke="currentColor" stroke-width="3.5" style="fill:var(--bg)"><circle cx="20" cy="20" r="16"/><circle cx="14" cy="15" r="2" fill="currentColor" stroke="none"/><circle cx="25" cy="14" r="2" fill="currentColor" stroke="none"/><circle cx="19" cy="25" r="2" fill="currentColor" stroke="none"/><circle cx="28" cy="25" r="1.6" fill="currentColor" stroke="none"/></symbol>
+<symbol id="fish" viewBox="0 0 40 40" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" style="fill:var(--bg)"><ellipse cx="17" cy="20" rx="13" ry="9"/><polygon points="29,20 38,12 38,28"/><circle cx="10" cy="18" r="2" fill="currentColor" stroke="none"/></symbol>
+<symbol id="dog" viewBox="0 0 120 120" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M26 52Q8 22 30 14Q52 12 54 42Z" fill="var(--ink)"/><path d="M94 52Q112 22 90 14Q68 12 66 42Z" fill="var(--ink)"/>
+<ellipse cx="60" cy="68" rx="36" ry="34" fill="var(--bg)"/>
+<path d="M25 64Q22 38 47 36Q52 54 46 72Q36 84 26 80Z" fill="var(--ink)"/><path d="M95 64Q98 38 73 36Q68 54 74 72Q84 84 94 80Z" fill="var(--ink)"/>
+<circle cx="44" cy="62" r="7" fill="var(--bg)" stroke-width="2.5"/><circle cx="76" cy="62" r="7" fill="var(--bg)" stroke-width="2.5"/>
+<circle cx="45" cy="63" r="3.2" fill="var(--ink)" stroke="none"/><circle cx="77" cy="63" r="3.2" fill="var(--ink)" stroke="none"/>
+<ellipse cx="60" cy="84" rx="13" ry="10" fill="var(--bg)" stroke-width="3"/><ellipse cx="60" cy="78" rx="7" ry="5" fill="var(--ink)" stroke="none"/>
+<path d="M60 83V89M60 89Q53 95 48 89M60 89Q67 95 72 89" fill="none" stroke-width="3"/><path d="M56 92Q60 106 64 92Z" fill="var(--bg)" stroke-width="2.5"/>
+</symbol></defs></svg>
+<div id="deco" aria-hidden="true"></div>
+<main class="wrap">
+<header class="hero">
+  <div>
+    <div class="top"><button class="pet dogbtn" data-own aria-label="摸摸小狗"><svg class="dog"><use href="#dog"/></svg></button><span class="bub" id="hb">汪！</span></div>
+    <h1 class="name">Wasabi</h1>
+    <p class="tag">不算特别聪明，但情商很高的黑白边牧女孩。</p>
+    <p class="sub">2021 年 2 月 10 日出生（暂定日期）</p>
+  </div>
+  <div><div class="card photo"><div class="stage" id="ph" data-own><img decoding="async" fetchpriority="high" src="./media/photo-1.webp" alt="Wasabi 在沙滩上举起前爪，沙子上写着她的名字" draggable="false" style="object-position:50% 55%"><span class="hint">点点我，贴贴纸！</span></div></div><button class="pill" id="clr">清空贴纸</button></div>
+</header>
+
+<section>
+  <h2><svg class="i"><use href="#paw"/></svg>小档案</h2>
+  <dl class="facts">
+    <div><dt>品种</dt><dd>边境牧羊犬</dd></div>
+    <div><dt>毛色</dt><dd>黑白</dd></div>
+    <div><dt>性别</dt><dd>女孩</dd></div>
+    <div><dt>星座</dt><dd>水瓶座 ♒</dd></div>
+    <div><dt>年龄</dt><dd id="age">–</dd></div>
+  </dl>
+  <div class="card count"><span>来到这个世界 <b id="days">–</b> 天</span><span id="bday">–</span></div>
+</section>
+
+<section>
+  <h2><svg class="i"><use href="#bone"/></svg>性格</h2>
+  <div class="card traits">
+    <div><div class="row">好吃 <small>随时愿意再吃一点</small></div><div class="bar"><i style="width:100%"></i></div></div>
+    <div><div class="row">情商 <small>很会看你的脸色</small></div><div class="bar"><i style="width:96%"></i></div></div>
+    <div><div class="row">乖巧 <small>不吵不闹，好带</small></div><div class="bar"><i style="width:92%"></i></div></div>
+    <div><div class="row">聪明 <small>够用就好</small></div><div class="bar"><i style="width:62%"></i></div></div>
+  </div>
+</section>
+
+<section>
+  <h2><svg class="i"><use href="#paw"/></svg>从奶团子到现在</h2>
+  <div class="grow">
+    <figure class="card"><img decoding="async" loading="lazy" src="./media/photo-2.webp" alt="很小的 Wasabi 坐在木地板上"><figcaption>刚到家<small>一团黑白小毛球</small></figcaption></figure>
+    <figure class="card"><img decoding="async" loading="lazy" src="./media/photo-3.webp" alt="小狗 Wasabi 叼着橄榄球玩具"><figcaption>爱叼东西<small>橄榄球是心头好</small></figcaption></figure>
+    <figure class="card"><img decoding="async" loading="lazy" src="./media/photo-4.webp" alt="少年期的 Wasabi 在家里笑"><figcaption>长大一点<small>笑得像小太阳</small></figcaption></figure>
+    <figure class="card"><img decoding="async" loading="lazy" src="./media/photo-5.webp" alt="现在的 Wasabi 在草地上吐舌头"><figcaption>现在<small>草地上的常客</small></figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <div class="hd"><h2><svg class="i"><use href="#bone"/></svg>照片墙</h2><button class="pill" id="rnd0" data-own>随机看一张</button></div>
+  <div class="gal" id="gal"></div>
+</section>
+
+<section>
+  <h2><svg class="i"><use href="#bone"/></svg>喂 Wasabi</h2>
+  <div class="card feed">
+    <div class="mouth"><span id="say">好饿…</span><button class="pet bigdog" data-own aria-label="摸摸 Wasabi"><svg><use href="#dog"/></svg></button></div>
+    <div class="meter"><div class="row">饱食度 <small id="fn">已经吃了 0 个</small></div><div class="bar"><i id="fill" style="width:0"></i></div></div>
+    <div class="foods">
+      <button class="food" data-f="骨头" data-own><svg><use href="#bone"/></svg>骨头</button>
+      <button class="food" data-f="饼干" data-own><svg><use href="#cookie"/></svg>饼干</button>
+      <button class="food" data-f="小鱼" data-own><svg><use href="#fish"/></svg>小鱼</button>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="wrap"><svg><use href="#dog"/></svg>汪汪汪！Wasabi 在这里。</footer>
+
+<button class="pill" id="snd" data-own>♪ 声音：开</button>
+<dialog id="dlg"><div class="lb"><button class="pill nav" id="prv" data-own aria-label="上一张">‹</button><figure><img decoding="async" loading="lazy" id="big" alt=""><figcaption id="cap"></figcaption></figure><button class="pill nav" id="nxt" data-own aria-label="下一张">›</button></div><div class="lbbar"><span id="cnt"></span><button class="pill" id="rnd" data-own>随机一张</button><button class="pill" id="cls">关闭</button></div></dialog>
+<script>
+(function(){
+  var G=[["./media/photo-6.webp","棕榈树下吐舌头"],["./media/photo-7.webp","盯着大骨头"],["./media/photo-8.webp","副驾看风景"],["./media/photo-9.webp","低头研究黄色小鸭"],["./media/photo-10.webp","在桥边眯眼笑"],["./media/photo-11.webp","和朋友趴着"],["./media/photo-12.webp","歪头斜眼看你"],["./media/photo-13.webp","盯着玩具，随时开冲"],["./media/photo-14.webp","日落时的车窗"],["./media/photo-15.webp","淡定坐着，金毛路过"],["./media/photo-16.webp","在沙滩上签名"],["./media/photo-17.webp","露齿笑"],["./media/photo-18.webp","戴着白色小角"],["./media/photo-19.webp","小时候啃橄榄球"],["./media/photo-20.webp","和卷毛朋友同框"],["./media/photo-21.webp","近距离开心脸"],["./media/photo-22.webp","握手"],["./media/photo-23.webp","睡着了"],["./media/photo-24.webp","脸上还沾着沙"],["./media/photo-25.webp","和金毛一起趴着"],["./media/photo-26.webp","歪头微笑"],["./media/photo-27.webp","趴在人身上休息"],["./media/photo-28.webp","鼻子先到"],["./media/photo-29.webp","坐得很端正"],["./media/photo-30.webp","背对镜头，尾巴蓬蓬"],["./media/photo-31.webp","鼻子特写"],["./media/photo-32.webp","在礁石上抬头看"]];
+  document.getElementById('gal').innerHTML=G.map(function(g,i){return '<figure class="card" data-i="'+i+'"><button><img decoding="async" loading="lazy" src="'+g[0]+'" alt="'+g[1]+'"></button><figcaption>'+g[1]+'</figcaption></figure>'}).join('');
+  var S=['paw','bone','star','heart','spark','paw','ball','dog','star','bone'],D='';
+  function r(i){var x=Math.sin(i*12.9898)*43758.5453;return x-Math.floor(x)}
+  for(var i=0;i<52;i++){
+    var sz=26+r(i+3)*22,left=i%6==5?18+r(i)*64:(i%2?91+r(i)*6:r(i)*6);
+    D+='<svg class="d" style="top:'+(i*1.9+r(i+9)*2).toFixed(1)+'%;left:'+left.toFixed(1)+'%;width:'+sz.toFixed(0)+'px;height:'+sz.toFixed(0)+'px;transform:rotate('+(r(i+5)*60-30).toFixed(0)+'deg)"><use href="#'+S[i%S.length]+'"/></svg>';
+  }
+  document.getElementById('deco').innerHTML=D;
+  var b=new Date(2021,1,10),n=new Date(),t=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+  var y=t.getFullYear()-b.getFullYear(),m=t.getMonth()-b.getMonth();
+  if(t.getDate()<b.getDate())m--; if(m<0){y--;m+=12}
+  document.getElementById('age').textContent=y+' 岁 '+m+' 个月';
+  document.getElementById('days').textContent=Math.floor((t-b)/864e5).toLocaleString('zh-CN');
+  var nb=new Date(t.getFullYear(),1,10); if(nb<t)nb=new Date(t.getFullYear()+1,1,10);
+  var d=Math.round((nb-t)/864e5);
+  document.getElementById('bday').textContent=d===0?'今天是 Wasabi 的暂定生日！':'距离下一个暂定生日还有 '+d+' 天';
+  var $=function(i){return document.getElementById(i)},AC,on=true,st=false,bgm=new Audio('./media/music.mp3');bgm.loop=true;bgm.volume=.35;bgm.onerror=function(){var s=document.getElementById('snd');if(s)s.textContent='♪ 音乐加载失败'};
+  function ctx(){if(!AC){var C=window.AudioContext||window.webkitAudioContext;if(C)AC=new C()}if(AC&&AC.state==='suspended')AC.resume();return AC}
+  function tone(a,b,d,ty,v,w){if(!on)return;var c=ctx();if(!c)return;var t=c.currentTime+(w||0),o=c.createOscillator(),g=c.createGain();o.type=ty||'sine';o.frequency.setValueAtTime(a,t);o.frequency.exponentialRampToValueAtTime(b,t+d);g.gain.setValueAtTime(v||.15,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+d+.02)}
+  var P=[523,587,659,784,880,1047];
+  function pop(){var f=P[Math.random()*P.length|0];tone(f,f*1.6,.1,'sine',.16)}
+  function bark(){tone(520,210,.15,'square',.1);tone(330,130,.2,'sawtooth',.1)}
+  function munch(){[0,.08,.16].forEach(function(w,i){tone(260-i*30,150,.07,'triangle',.18,w)})}
+  function whoosh(){tone(300,1000,.12,'triangle',.1)}
+  function chime(){[784,988,1175,1568].forEach(function(f,i){tone(f,f,.18,'sine',.14,i*.08)})}
+  document.addEventListener('pointerdown',function(e){ctx();if(!e.target.closest('[data-own]'))pop()},true);
+  document.addEventListener('click',function(){if(on&&!st){st=true;bgm.play().catch(function(){st=false})}},true);
+  $('snd').onclick=function(){on=!on;this.textContent=on?'♪ 声音：开':'♪ 声音：关';if(on){st=true;bgm.play().catch(function(){});pop()}else bgm.pause()};
+  var SY=['heart','star','bone','paw','spark','ball','dog'],TX=['汪!','好吃!','乖乖','嘿嘿','爱你'];
+  function stk(box,x,y,fl,sym){var d=document.createElement('div'),t=!fl&&!sym&&Math.random()<.3;d.className='stk'+(t?' t':'')+(fl?' fl':'');
+    d.style.cssText='left:'+x+'px;top:'+y+'px;--r:'+(Math.random()*50-25|0)+'deg';
+    if(t)d.textContent=TX[Math.random()*TX.length|0];
+    else{var s=44+Math.random()*28|0;d.style.width=d.style.height=s+'px';d.style.margin=(-s/2)+'px 0 0 '+(-s/2)+'px';d.innerHTML='<svg width="100%" height="100%"><use href="#'+(sym||SY[Math.random()*SY.length|0])+'"/></svg>'}
+    box.appendChild(d);if(fl)setTimeout(function(){d.remove()},950);return d}
+  var ph=$('ph');
+  ph.addEventListener('click',function(e){var r=ph.getBoundingClientRect(),h=ph.querySelector('.hint');if(h)h.remove();
+    stk(ph,e.clientX-r.left,e.clientY-r.top);tone(900,1500,.1,'sine',.18);tone(1200,1800,.08,'triangle',.1,.06);
+    var all=ph.querySelectorAll('.stk');if(all.length>40)all[0].remove()});
+  $('clr').onclick=function(){pop();ph.querySelectorAll('.stk').forEach(function(s){s.remove()})};
+  var SAY=['汪！','嘿嘿','摸摸我','要吃的！','你好呀','再摸一下'];
+  document.addEventListener('click',function(e){var p=e.target.closest('.pet');if(!p)return;bark();
+    var box=p.closest('.top,.mouth'),s=p.querySelector('svg'),sr=s.getBoundingClientRect(),br=box.getBoundingClientRect();
+    s.style.animation='none';void s.getBoundingClientRect();s.style.animation='wig .6s ease-in-out 2';
+    for(var i=0;i<3;i++)stk(box,sr.left-br.left+20+Math.random()*(sr.width-40),sr.top-br.top+20,true,'heart');
+    (box.classList.contains('top')?$('hb'):$('say')).textContent=SAY[Math.random()*SAY.length|0]});
+  var n=0,F={'骨头':'bone','饼干':'cookie','小鱼':'fish'},EAT=['好吃！','再来一个！','吧唧吧唧','香香的','还要还要'];
+  document.querySelectorAll('.food').forEach(function(b){b.addEventListener('click',function(){
+    var m=document.querySelector('.mouth'),f=document.createElement('div');f.className='fly';
+    f.innerHTML='<svg width="100%" height="100%"><use href="#'+F[b.dataset.f]+'"/></svg>';m.appendChild(f);whoosh();
+    setTimeout(function(){f.remove();n++;munch();var d=document.querySelector('.bigdog');d.classList.remove('eat');void d.offsetWidth;d.classList.add('eat');
+      $('say').textContent=EAT[Math.random()*EAT.length|0];$('fn').textContent='已经吃了 '+n+' 个';$('fill').style.width=((n%10)||10)*10+'%';
+      if(n%10===0){chime();for(var i=0;i<6;i++)stk(m,40+Math.random()*120,100+Math.random()*60,true);$('say').textContent='第 '+n+' 个！还能吃！'}},430)})});
+  var dlg=$('dlg'),big=$('big'),idx=0;
+  function show(i){idx=(i+G.length)%G.length;big.src=G[idx][0];big.alt=$('cap').textContent=G[idx][1];$('cnt').textContent=(idx+1)+' / '+G.length}
+  function open(i){show(i);if(dlg.showModal&&!dlg.open)dlg.showModal()}
+  function rnd(){var i;do{i=Math.random()*G.length|0}while(i===idx&&G.length>1);return i}
+  $('gal').addEventListener('click',function(e){var f=e.target.closest('figure');if(f)open(+f.dataset.i)});
+  $('prv').onclick=function(){whoosh();show(idx-1)};$('nxt').onclick=function(){whoosh();show(idx+1)};
+  $('rnd').onclick=function(){whoosh();show(rnd())};$('rnd0').onclick=function(){whoosh();open(rnd())};
+  $('cls').onclick=function(){dlg.close()};
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  document.addEventListener('keydown',function(e){if(!dlg.open)return;if(e.key==='ArrowLeft')$('prv').click();if(e.key==='ArrowRight')$('nxt').click()});
+  var x0=null;dlg.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  dlg.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(d)>50){whoosh();show(idx+(d<0?1:-1))}});
+})();
+</script>
+<section id="wasabi-quiz" aria-labelledby="quiz-title"><h2 id="quiz-title">🐾 你有多了解 Wasabi？</h2><div class="card quiz-card"><div id="quiz-content"></div><p class="quiz-hint">6 道小题 · 答案仅在当前页面保留，不上传个人信息。</p></div></section><audio id="wasabi-bgm" loop preload="none" playsinline src="./media/music.mp3"></audio><div class="bgm-controls"><button id="bgm-toggle" aria-label="播放背景音乐">♫ 播放音乐</button><small id="bgm-status" role="status">正在尝试播放</small><input id="bgm-volume" type="range" min="0" max="100" value="30" aria-label="背景音乐音量"></div><script>(()=>{'use strict';const audio=document.getElementById('wasabi-bgm'),toggle=document.getElementById('bgm-toggle'),status=document.getElementById('bgm-status');let manuallyPaused=false;audio.volume=.3;function sync(){toggle.textContent=audio.paused?'♫ 播放音乐':'Ⅱ 暂停音乐';toggle.setAttribute('aria-label',audio.paused?'播放背景音乐':'暂停背景音乐')}async function start(){try{await audio.play();status.textContent='Better, Together, Forever';sync()}catch(e){status.textContent='轻点页面开启音乐';sync()}}status.textContent='轻点页面开启音乐';sync();function firstTouch(){if(!manuallyPaused&&audio.paused)start()}document.addEventListener('pointerdown',e=>{if(!e.target.closest('.bgm-controls'))firstTouch()},{once:true});document.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')firstTouch()},{once:true});toggle.onclick=()=>{if(audio.paused){manuallyPaused=false;start()}else{manuallyPaused=true;audio.pause();status.textContent='音乐已暂停';sync()}};document.getElementById('bgm-volume').oninput=e=>{audio.volume=Number(e.target.value)/100};audio.addEventListener('play',sync);audio.addEventListener('pause',sync);const qs=[["Wasabi 的星座？",["金牛座","水瓶座","巨蟹座","双鱼座"],1],["下列食物中，Wasabi 最爱的是？",["西兰花","鸡蛋","牛膝骨","秋葵"],1],["Wasabi 听到什么会耳朵立起来？",["零食","出去玩","你妈妈呢？","全部"],3],["下列跟 Wasabi 关系最好的汪是？",["莹莹","马小跳","板凳","邪恶柯基"],2],["Wasabi 的男朋友是？",["板凳","马小跳","红中","暂无"],3],["下列技能 Wasabi 不会的是？",["握手","趴下","转圈圈","装死"],3]],answers=Array(qs.length).fill(null),box=document.getElementById('quiz-content');let index=0;function render(){const q=qs[index];box.innerHTML='<div class="quiz-top"><span>WASABI 小测试</span><span>第 '+(index+1)+' / '+qs.length+' 题</span></div><div class="quiz-progress"><i style="width:'+((index+1)/qs.length*100)+'%"></i></div><h3 tabindex="-1" id="question-heading">'+q[0]+'</h3><div class="quiz-options">'+q[1].map((a,i)=>'<button class="quiz-option" data-answer="'+i+'" aria-pressed="'+(answers[index]===i)+'">'+String.fromCharCode(65+i)+'　'+a+'</button>').join('')+'</div><div class="quiz-nav"><button id="quiz-prev" '+(index===0?'disabled':'')+'>上一题</button><button id="quiz-next" '+(answers[index]===null?'disabled':'')+'>'+(index===qs.length-1?'查看成绩 🐾':'下一题 →')+'</button></div>';box.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>{answers[index]=Number(b.dataset.answer);render();box.querySelector('[data-answer="'+answers[index]+'"]').focus()});document.getElementById('quiz-prev').onclick=()=>{index--;render();focusQuestion()};document.getElementById('quiz-next').onclick=()=>{if(answers[index]===null)return;if(index<qs.length-1){index++;render();focusQuestion()}else result()}}function focusQuestion(){document.getElementById('question-heading').focus({preventScroll:true})}function result(){const score=answers.filter((a,i)=>a===qs[i][2]).length;box.innerHTML='<h3 tabindex="-1" id="quiz-result">'+(score===6?'Wasabi 的满分知己！':score>=4?'已经很了解 Wasabi 啦！':'再多认识 Wasabi 一点吧！')+'</h3><div class="quiz-score">'+score+' / 6 🐾</div><p>每一份了解，都是一份爱。</p>'+qs.map((q,i)=>'<div class="quiz-review"><b>'+(answers[i]===q[2]?'✓':'○')+' '+(i+1)+'. '+q[0]+'</b><p>你的答案：'+String.fromCharCode(65+answers[i])+' '+q[1][answers[i]]+'</p><p>正确答案：'+String.fromCharCode(65+q[2])+' '+q[1][q[2]]+'</p></div>').join('')+'<div class="quiz-nav"><button id="quiz-restart">再玩一次 ↻</button></div>';document.getElementById('quiz-restart').onclick=()=>{answers.fill(null);index=0;render();focusQuestion()};document.getElementById('quiz-result').focus({preventScroll:true})}render()})();</script></body>
+</html>
